@@ -5,10 +5,10 @@ window.onscroll = () => {
     animation_StoryPXandNX()
 }
 
+let pizzaMenu = document.querySelector('#menu');
 
 function scrollDown() {
     const navibar = document.querySelector('#navibar');
-    const pizzaMenu = document.querySelector('#menu');
 
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
         navibar.style.top = '0px';
@@ -22,6 +22,18 @@ function scrollDown() {
         pizzaMenu.style.paddingBottom = '2.85rem';
     }
 }
+
+pizzaMenu.addEventListener('click', function() {
+    let menuDropDown = document.getElementById('menuDD');
+
+    if (menuDropDown.style.transform === 'translateY(20%)') {
+        menuDropDown.style.opacity = '1';
+        menuDropDown.style.transform = 'translateY(0%)';
+    } else {
+        menuDropDown.style.opacity = '0';
+        menuDropDown.style.transform = 'translateY(20%)';
+    }
+})
 // NX = Negative X-axis
 function animation_aboutStoryNX() {
     const aboutStoryText = document.querySelector('.about-story-text');
