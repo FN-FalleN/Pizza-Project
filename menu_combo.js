@@ -20,14 +20,19 @@ function scrollDown() {
     }
 }
 
-pizzaMenu.addEventListener('click', function() {
+let Menu = document.querySelector('#menulink');
+
+Menu.addEventListener('click', function() {
     let menuDropDown = document.getElementById('menuDD');
+    let listMenu = document.querySelectorAll('.list-menu')
 
     if (menuDropDown.style.transform === 'translateY(20%)') {
         menuDropDown.style.opacity = '1';
         menuDropDown.style.transform = 'translateY(0%)';
+        listMenu.forEach(item => item.style.display = 'inline');
     } else {
         menuDropDown.style.opacity = '0';
         menuDropDown.style.transform = 'translateY(20%)';
+        listMenu.forEach(item => item.style.display = 'none');
     }
 })

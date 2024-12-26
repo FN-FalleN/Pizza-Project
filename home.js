@@ -1,15 +1,14 @@
 window.onscroll = function () {
     scrollDown()
-    animation_XandX50m()
-    animation_XandX2km()
-    animationY()
-    animation_XandXm()
+    animationX50px()
+    animationX2100px()
+    animationY900()
+    animationX3600px()
 }
-
-let pizzaMenu = document.querySelector('#menu');
 
 function scrollDown() {
     const navibar = document.querySelector('#navibar');
+    const pizzaMenu = document.querySelector('#menu');
 
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
         navibar.style.top = '0px';
@@ -24,19 +23,24 @@ function scrollDown() {
     }
 }
 
-pizzaMenu.addEventListener('click', function() {
+let Menu = document.querySelector('#menulink');
+
+Menu.addEventListener('click', function() {
     let menuDropDown = document.getElementById('menuDD');
+    let listMenu = document.querySelectorAll('.list-menu')
 
     if (menuDropDown.style.transform === 'translateY(20%)') {
         menuDropDown.style.opacity = '1';
         menuDropDown.style.transform = 'translateY(0%)';
+        listMenu.forEach(item => item.style.display = 'inline');
     } else {
         menuDropDown.style.opacity = '0';
         menuDropDown.style.transform = 'translateY(20%)';
+        listMenu.forEach(item => item.style.display = 'none');
     }
 })
 
-function animation_XandX50m() {
+function animationX50px() {
     const conSec_aniX = document.querySelector('.img-intro');
     const conSec_ani_X = document.querySelector('.text-intro');
 
@@ -46,7 +50,7 @@ function animation_XandX50m() {
     }
 }
 
-function animation_XandX2km() {
+function animationX2100px() {
     const conFourth_aniX = document.querySelector('.text-story');
     const conFourth_ani_X = document.querySelector('.img-story');
 
@@ -56,7 +60,7 @@ function animation_XandX2km() {
     }
 }
 
-function animationY() {
+function animationY900px() {
     const conThird_aniY = document.querySelector('.popular-menu');
     const conFifth_aniY = document.querySelector('.meet_chef');
     const conSeventh_aniY = document.querySelector('.customer-feedback');
@@ -74,7 +78,7 @@ function animationY() {
     }
 }
 
-function animation_XandXm() {
+function animationX3600px() {
     const conSix_ani_X = document.querySelector('.book-form');
     const conSix_aniX = document.querySelector('.img-book');
 
